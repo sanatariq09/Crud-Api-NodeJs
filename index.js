@@ -1,12 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
-import Product from "./models/product.model.js";
 import productRoutes from "./routes/product.route.js";
 
 const app = express();
 
 // Middleware
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
