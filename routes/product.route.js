@@ -1,29 +1,28 @@
 import express from "express";
-//import Product from '../models/product.model.js';
-
-const router = express.Router();
-
 import {
   getProducts,
-  getProduct,
   createProduct,
   updateProduct,
   deleteProduct,
+  getProduct,
 } from "../controllers/product.controller.js";
+import { upload } from "../middleware/upload.middleware.js";
 
-// GET all products
+const router = express.Router();
+
+// All products
 router.get("/", getProducts);
 
-// GET single product by ID
+// Single product
 router.get("/:id", getProduct);
 
-// CREATE new product
-router.post("/", createProduct);
+// Add product
+router.post("/", upload.single("image"), createProduct);
 
-// UPDATE a product
-router.put("/:id", updateProduct);
+// Update product
+router.put("/:id", upload.single("image"), updateProduct);
 
-// DELETE a product
+// Delete product
 router.delete("/:id", deleteProduct);
 
 export default router;
