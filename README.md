@@ -1,4 +1,5 @@
 📌 Product CRUD App
+
 Full-stack Product Management CRUD Application using Node.js + Express + MongoDB (Backend) and React.js (Frontend).
 
 🚀 Project Overview
@@ -35,7 +36,7 @@ npm install
 
 .env file:
 
-PORT=5000
+PORT=4000
 MONGO_URI=your_mongodb_connection_string
 
 3️⃣ Start Backend Server
@@ -85,7 +86,7 @@ React app will run at:
 
 React frontend consumes API like:
 
-http://localhost:5000/api/products
+http://localhost:4000/api/products
 
 🖼 Image Upload Feature
 
